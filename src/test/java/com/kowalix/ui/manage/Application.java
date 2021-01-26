@@ -12,7 +12,7 @@ public class Application {
     private final JobOffersPage jobOffersPage;
 
     public Application(){
-        String pathToDriver = "C:\\Users\\dako\\Desktop\\testing_projects\\AutomatedTests\\utilities\\chromedriver.exe";
+        String pathToDriver = "C:\\Users\\dako\\Desktop\\testing_projects\\AutomatedTests\\utilities\\chromedriver";
         System.setProperty("webdriver.chrome.driver", pathToDriver);
         driver = new ChromeDriver();
         jobOffersPage = new JobOffersPage(driver);
