@@ -1,6 +1,5 @@
-package com.kowalix.ui.tests;
+package com.kowalix.ui.manage;
 
-import com.kowalix.ui.manage.Application;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

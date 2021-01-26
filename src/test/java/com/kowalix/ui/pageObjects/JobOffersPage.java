@@ -28,6 +28,8 @@ public class JobOffersPage extends Page {
     private List<WebElement> jobRows;
     @FindBy(id = "sortbySelect")
     private WebElement sortBySelect;
+    @FindBy(id = "keywordLocation")
+    private WebElement keywordInput;
 
 
     public JobOffersPage(WebDriver driver) {
@@ -84,6 +86,12 @@ public class JobOffersPage extends Page {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         return jobTitles;
+    }
+
+    public void filterByKeyword(String keyword){
+        keywordInput.sendKeys("This job does offer does not exist");
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(keywordInput, "aria-expanded"));
+        keywordInput.sendKeys(Keys.ENTER);
     }
 
 }

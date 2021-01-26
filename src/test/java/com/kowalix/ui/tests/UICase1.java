@@ -1,6 +1,7 @@
 package com.kowalix.ui.tests;
 
 
+import com.kowalix.ui.manage.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

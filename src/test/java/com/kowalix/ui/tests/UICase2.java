@@ -1,5 +1,6 @@
 package com.kowalix.ui.tests;
 
+import com.kowalix.ui.manage.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,6 @@ public class UICase2 extends TestBase {
         Collections.sort(sorted, Collections.reverseOrder());
 
         Assert.assertEquals(sorted, jobTitles, "Lists are not equal");
-
 
     }
 
