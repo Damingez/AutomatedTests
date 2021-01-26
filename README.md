@@ -10,7 +10,7 @@ Rest-assured and Selenium
  - Maven
  - IntelliJ 
  - Terminal
- - Chrome browser (88.0.4324.104)
+ -  Firefox 85.0 (64 bit) / Chrome browser (88.0.4324.104) 
  
  ## Run tests in terminal
  
@@ -19,6 +19,7 @@ Rest-assured and Selenium
  - Navigate to `AutomatedTests`
  - make sure that proper gecko/chromedriver is choosen in `AutomatedTests/utilities/file`
    This can be configured in `pathToDriver` variable located in `AutomatedTests/src/test/java/com/kowalix/ui/manage/Application.java`
+   Also remember to add rights to execute for driver  `chmod +x geckodriver`
  - Run `./mvn clean test` for linux , `mvn clean test` for Windows
  
  ## Running individual tests in IntelliJ
