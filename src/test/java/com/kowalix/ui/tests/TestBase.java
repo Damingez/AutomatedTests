@@ -1,22 +1,24 @@
 package com.kowalix.ui.tests;
 
 import com.kowalix.ui.manage.Application;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
-    WebDriver driver;
+
+    public Application app;
 
     @BeforeMethod
-    public void init(){
-        driver = Application.getDriver();
-        driver.manage().window().maximize();
+    public void setUp() {
+        app = new Application();
+        app.getDriver().manage().window().maximize();
     }
 
+
     @AfterMethod
-    public void quit(){
-        driver.quit();
+    public void tearDown() {
+        app.getDriver().quit();
     }
+
 
 }
