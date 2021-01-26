@@ -12,7 +12,8 @@ public class Application {
     private final JobOffersPage jobOffersPage;
 
     public Application(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dako\\Documents\\driver_for_practise\\chromedriver.exe");
+        String pathToDriver = "C:\\Users\\dako\\Desktop\\testing_projects\\AutomatedTests\\utilities\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", pathToDriver);
         driver = new ChromeDriver();
         jobOffersPage = new JobOffersPage(driver);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

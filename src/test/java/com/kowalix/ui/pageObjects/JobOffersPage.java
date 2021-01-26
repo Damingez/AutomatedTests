@@ -1,14 +1,18 @@
 package com.kowalix.ui.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class JobOffersPage extends Page {
 
@@ -22,6 +26,8 @@ public class JobOffersPage extends Page {
     private List<WebElement> locationCells;
     @FindBy(css = "div.list-group-item")
     private List<WebElement> jobRows;
+    @FindBy(id = "sortbySelect")
+    private WebElement sortBySelect;
 
 
     public JobOffersPage(WebDriver driver) {
@@ -62,4 +68,22 @@ public class JobOffersPage extends Page {
     public int countJobsNumber() {
         return jobRows.size();
     }
+
+    public void chooseSorting(String sortBy){
+        Select options = new Select(sortBySelect);
+        options.selectByVisibleText(sortBy);
+    }
+
+    public List<String> getClearedJobsNames(){
+        List<WebElement> jobTitleWebElements = driver.findElements(By.cssSelector("div[aria-labelledby=header-titler]:first-child"));
+
+        List<String> jobTitles = jobTitleWebElements
+                .stream()
+                .map(element -> element.getText()
+                        .substring(0, element.getText().indexOf("\n")))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        return jobTitles;
+    }
+
 }
