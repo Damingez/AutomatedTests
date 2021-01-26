@@ -1,0 +1,19 @@
+<suite name="Suite1" verbose="1" >
+
+	<test name="Api_tests">
+		<classes>
+			<class name="com.kowalix.apiTests.Case1"/>
+			<class name="com.kowalix.apiTests.Case2"/>
+			<class name="com.kowalix.apiTests.Case3"/>
+		</classes>
+	</test>
+
+	<test name="UI_tests" >
+		<classes>
+			<class name="com.kowalix.ui.tests.UICase1" />
+			<class name="com.kowalix.ui.tests.UICase2" />
+			<class name="com.kowalix.ui.tests.UICase3" />
+		</classes>
+	</test>
+
+</suite>
