@@ -3,6 +3,7 @@ package com.kowalix.ui.manage;
 import com.kowalix.ui.pageObjects.JobOffersPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,9 +13,9 @@ public class Application {
     private final JobOffersPage jobOffersPage;
 
     public Application(){
-        String pathToDriver = "C:\\Users\\dako\\Desktop\\testing_projects\\AutomatedTests\\utilities\\chromedriver";
-        System.setProperty("webdriver.chrome.driver", pathToDriver);
-        driver = new ChromeDriver();
+        String pathToDriver = "./utilities/geckodriver";
+        System.setProperty("webdriver.gecko.driver", pathToDriver);
+        driver = new FirefoxDriver();
         jobOffersPage = new JobOffersPage(driver);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }

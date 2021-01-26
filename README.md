@@ -17,7 +17,9 @@ Rest-assured and Selenium
  - Open Terminal
  - Run `git clone <repository url>`
  - Navigate to `AutomatedTests`
- - Run `./mvn clean test` for linux ,  `mvn clean test` for Windows
+ - make sure that proper gecko/chromedriver is choosen in `AutomatedTests/utilities/file`
+   This can be configured in `pathToDriver` variable located in `AutomatedTests/src/test/java/com/kowalix/ui/manage/Application.java`
+ - Run `./mvn clean test` for linux , `mvn clean test` for Windows
  
  ## Running individual tests in IntelliJ
  
