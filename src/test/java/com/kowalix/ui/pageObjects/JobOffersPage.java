@@ -30,6 +30,8 @@ public class JobOffersPage extends Page {
     private WebElement sortBySelect;
     @FindBy(id = "keywordLocation")
     private WebElement keywordInput;
+    @FindBy(css = "div[aria-labelledby=header-titler]:first-child")
+    private List<WebElement> jobTitleWebElements;
 
 
     public JobOffersPage(WebDriver driver) {
@@ -77,7 +79,6 @@ public class JobOffersPage extends Page {
     }
 
     public List<String> getClearedJobsNames(){
-        List<WebElement> jobTitleWebElements = driver.findElements(By.cssSelector("div[aria-labelledby=header-titler]:first-child"));
 
         List<String> jobTitles = jobTitleWebElements
                 .stream()
