@@ -6,11 +6,11 @@ Rest-assured and Selenium
  ## Prerequisites
  
  - Git
- - JDK 8+
+ - JDK 12 is set in POM, if You wanna change it to lower (but >= 8) it should work fine.
  - Maven
  - IntelliJ 
  - Terminal
- -  Firefox 85.0 (64 bit) / Chrome browser (88.0.4324.104) 
+ - Firefox 85.0 (64 bit) / Chrome browser (88.0.4324.104) 
  
  ## Run tests in terminal
  
